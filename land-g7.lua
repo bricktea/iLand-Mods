@@ -1,6 +1,4 @@
--- support: land-g7
 local enabled=true
-local land_type='landg7'
 if not(enabled) then return end
 --------------------------------
 -- This function(split) form:
@@ -24,16 +22,35 @@ function g7pos(text,mode) --mode(str)=start,end
 	pos.z=u[3]
 	return pos
 end
+function ReadAllText(path)
+	local file=assert(io.open(path,'r'))
+	local data=''
+	for line in file:lines() do
+		data=data..'\n'..line
+	end
+	file:close()
+	return data
+end
+function WriteAllText(path,content)
+    local file = assert(io.open(path,'w'))
+    file:write(content)
+    file:close()
+end
+function IfFile(path)
+	local file = io.open(path,'r')
+	if file == nil then return false
+	else
+		file:close();return true
+	end
+end
 --------------------------------
 -- Main
-local libPath=luaapi.LibPATH
-local luaPath=luaapi.LuaPATH
-local json = require(libPath..'dkjson')
-if not(tool:IfFile(luaPath..'input-data\\landg7-player.json')) then
-    print('ERR! land-g7 data file not found!')
+local json = require('dkjson')
+if not(IfFile('input-data\\landg7-player.json')) then
+    print('[Error] land-g7 data file not found!');return
 end
-local g7data=json.decode(tool:ReadAllText(luaPath..'input-data\\landg7-player.json'))
-print('--------------------------------------------------')
+local g7data=json.decode(ReadAllText('input-data\\landg7-player.json'))
+print('[INFO] Reading data ... ')
 local owners={}
 local data={}
 local landId=''
@@ -71,14 +88,11 @@ for i,v in pairs(g7data.limit) do
 			end
 			table.insert(owners[i],#owners[i]+1,landId)
 			-- OPT
-			tool:WriteAllText(luaPath..'output-data\\data.json',json.encode(data))
-			tool:WriteAllText(luaPath..'output-data\\owners.json',json.encode(owners))
-			print('[PROG] LandId = '..landId..' | Owner = '..i)
+			WriteAllText('output-data\\data.json',json.encode(data))
+			WriteAllText('output-data\\owners.json',json.encode(owners))
+			print('[INFO] LandId = '..landId..' | Owner = '..i)
 		end
 	end
 end
 
-
-print('--------------------------------------------------')
-
-print('[LC] ILand-Converter is loaded.')
+print('[INFO] Completed.')
