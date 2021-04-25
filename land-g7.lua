@@ -43,6 +43,22 @@ function IfFile(path)
 		file:close();return true
 	end
 end
+function getGuid() -- [NOTICE] This function is from Internet.
+    local seed={'e','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'}
+    local tb={}
+	---math.randomseed(os.time)
+    for i=1,32 do
+        table.insert(tb,seed[math.random(1,16)])
+    end
+    local sid=table.concat(tb)
+    return string.format('%s-%s-%s-%s-%s',
+        string.sub(sid,1,8),
+        string.sub(sid,9,12),
+        string.sub(sid,13,16),
+        string.sub(sid,17,20),
+        string.sub(sid,21,32)
+    )
+end
 --------------------------------
 -- Main
 local json = require('dkjson')
@@ -54,13 +70,12 @@ print('[INFO] Reading data ... ')
 local owners={}
 local data={}
 local landId=''
-math.randomseed(os.time())
 for i,v in pairs(g7data.limit) do
 	if v.land~=nil then
 		for a,b in pairs(v.land) do
 			local posA=g7pos(b,'start')
 			local posB=g7pos(b,'end')
-			landId='id'..tostring(math.random(100000,999999))
+			landId=getGuid()
 			-- DATA
 			data[landId]={} --data Version: iLand-1.1.1
 			data[landId].range={}
