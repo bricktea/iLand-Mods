@@ -62,28 +62,31 @@ for i,v in pairs(g7data.limit) do
 			local posB=g7pos(b,'end')
 			landId='id'..tostring(math.random(100000,999999))
 			-- DATA
-			data[landId]={} --data Version: iLand-1.1.0
+			data[landId]={} --data Version: iLand-1.1.1
 			data[landId].range={}
-			data[landId].setting={}
-			data[landId].setting.share={}
-			data[landId].range.start_x=tonumber(posA.x)
-			data[landId].range.start_z=tonumber(posA.z)
-			data[landId].range.start_y=tonumber(posA.y)
-			data[landId].range.end_x=tonumber(posB.x)
-			data[landId].range.end_z=tonumber(posB.z)
-			data[landId].range.end_y=tonumber(posB.y)
+			data[landId].settings={}
+			data[landId].settings.share={}
+			data[landId].settings.nickname=''
+			data[landId].range.start_position={}
+			data[landId].range.start_position[1]=tonumber(posA.x)
+			data[landId].range.start_position[2]=tonumber(posA.z)
+			data[landId].range.start_position[3]=tonumber(posA.y)
+			data[landId].range.end_position={}
+			data[landId].range.end_position[1]=tonumber(posB.x)
+			data[landId].range.end_position[2]=tonumber(posB.z)
+			data[landId].range.end_position[3]=tonumber(posB.y)
 			data[landId].range.dim=0
-			data[landId].setting.allow_destory=v.destroyblock
-			data[landId].setting.allow_place=v.putblock
-			data[landId].setting.allow_use_item=v.useitem
-			data[landId].setting.allow_attack=v.attack
-			data[landId].setting.allow_open_chest=v.openchest
-			data[landId].setting.allow_exploding=false
-			data[landId].setting.allow_open_barrel=false
-			data[landId].setting.allow_pickupitem=false
-			data[landId].setting.allow_dropitem=true
+			data[landId].permissions.allow_destory=v.destroyblock
+			data[landId].permissions.allow_place=v.putblock
+			data[landId].permissions.allow_use_item=v.useitem
+			data[landId].permissions.allow_attack=v.attack
+			data[landId].permissions.allow_open_chest=v.openchest
+			data[landId].permissions.allow_exploding=false
+			data[landId].permissions.allow_open_barrel=false
+			data[landId].permissions.allow_pickupitem=false
+			data[landId].permissions.allow_dropitem=true
 			-- OWNER
-			if(owners[i]==nil) then
+			if owners[i]==nil then
 				owners[i]={}
 			end
 			table.insert(owners[i],#owners[i]+1,landId)
