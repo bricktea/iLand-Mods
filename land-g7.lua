@@ -77,11 +77,12 @@ for i,v in pairs(g7data.limit) do
 			local posB=g7pos(b,'end')
 			landId=getGuid()
 			-- DATA
-			data[landId]={} --data Version: iLand-1.1.1
+			data[landId]={} --data Version: iLand-1.1.2
 			data[landId].range={}
 			data[landId].settings={}
 			data[landId].settings.share={}
 			data[landId].settings.nickname=''
+			data[landId].settings.describe=''
 			data[landId].range.start_position={}
 			data[landId].range.start_position[1]=tonumber(posA.x)
 			data[landId].range.start_position[2]=tonumber(posA.z)
