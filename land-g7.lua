@@ -1,15 +1,6 @@
 local enabled=true
 if not(enabled) then return end
 --------------------------------
--- This function(split) form:
--- https://blog.csdn.net/forestsenlin/article/details/50590577
-function split(str,reps)
-    local resultStrList = {}
-    string.gsub(str,'[^'..reps..']+',function (w)
-        table.insert(resultStrList,w)
-    end)
-    return resultStrList
-end
 function g7pos(text,mode) --mode(str)=start,end
 	local n=''
 	if mode=='start' then n=string.sub(text,0,string.find(text,':',1)-1) end    
@@ -22,50 +13,14 @@ function g7pos(text,mode) --mode(str)=start,end
 	pos.z=u[3]
 	return pos
 end
-function ReadAllText(path)
-	local file=assert(io.open(path,'r'))
-	local data=''
-	for line in file:lines() do
-		data=data..'\n'..line
-	end
-	file:close()
-	return data
-end
-function WriteAllText(path,content)
-    local file = assert(io.open(path,'w'))
-    file:write(content)
-    file:close()
-end
-function IfFile(path)
-	local file = io.open(path,'r')
-	if file == nil then return false
-	else
-		file:close();return true
-	end
-end
-function getGuid() -- [NOTICE] This function is from Internet.
-    local seed={'e','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'}
-    local tb={}
-	---math.randomseed(os.time)
-    for i=1,32 do
-        table.insert(tb,seed[math.random(1,16)])
-    end
-    local sid=table.concat(tb)
-    return string.format('%s-%s-%s-%s-%s',
-        string.sub(sid,1,8),
-        string.sub(sid,9,12),
-        string.sub(sid,13,16),
-        string.sub(sid,17,20),
-        string.sub(sid,21,32)
-    )
-end
 --------------------------------
 -- Main
 local json = require('dkjson')
-if not(IfFile('input-data\\landg7-player.json')) then
+local lib = require('library')
+if not(lib.IfFile('input-data\\landg7-player.json')) then
     print('[Error] land-g7 data file not found!');return
 end
-local g7data=json.decode(ReadAllText('input-data\\landg7-player.json'))
+local g7data=json.decode(lib.ReadAllText('input-data\\landg7-player.json'))
 print('[INFO] Reading data ... ')
 local owners={}
 local data={}
@@ -75,22 +30,32 @@ for i,v in pairs(g7data.limit) do
 		for a,b in pairs(v.land) do
 			local posA=g7pos(b,'start')
 			local posB=g7pos(b,'end')
-			landId=getGuid()
+			local result=lib.formatXYZ(
+								tonumber(posA.x),
+								tonumber(posA.y),
+								tonumber(posA.z),
+								tonumber(posB.x),
+								tonumber(posB.y),
+								tonumber(posB.z)
+							)
+			posA=result[1]
+			posB=result[2]
+			landId=lib.getGuid()
 			-- DATA
-			data[landId]={} --data Version: iLand-1.1.2
+			data[landId]={} --data Version: iLand-1.1.3
 			data[landId].range={}
 			data[landId].settings={}
 			data[landId].settings.share={}
 			data[landId].settings.nickname=''
 			data[landId].settings.describe=''
 			data[landId].range.start_position={}
-			data[landId].range.start_position[1]=tonumber(posA.x)
-			data[landId].range.start_position[2]=tonumber(posA.z)
-			data[landId].range.start_position[3]=tonumber(posA.y)
+			data[landId].range.start_position[1]=posA.x
+			data[landId].range.start_position[2]=posA.z
+			data[landId].range.start_position[3]=posA.y
 			data[landId].range.end_position={}
-			data[landId].range.end_position[1]=tonumber(posB.x)
-			data[landId].range.end_position[2]=tonumber(posB.z)
-			data[landId].range.end_position[3]=tonumber(posB.y)
+			data[landId].range.end_position[1]=posB.x
+			data[landId].range.end_position[2]=posB.z
+			data[landId].range.end_position[3]=posB.y
 			data[landId].range.dim=0
 			data[landId].permissions.allow_destory=v.destroyblock
 			data[landId].permissions.allow_place=v.putblock
@@ -107,8 +72,8 @@ for i,v in pairs(g7data.limit) do
 			end
 			table.insert(owners[i],#owners[i]+1,landId)
 			-- OPT
-			WriteAllText('output-data\\data.json',json.encode(data))
-			WriteAllText('output-data\\owners.json',json.encode(owners))
+			lib.WriteAllText('output-data\\data.json',json.encode(data))
+			lib.WriteAllText('output-data\\owners.json',json.encode(owners))
 			print('[INFO] LandId = '..landId..' | Owner = '..i)
 		end
 	end
