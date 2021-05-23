@@ -57,6 +57,7 @@ for i,v in pairs(g7data.limit) do
 			data[landId].range.end_position[2]=posB.z
 			data[landId].range.end_position[3]=posB.y
 			data[landId].range.dim=0
+			data[landId].permissions={}
 			data[landId].permissions.allow_destory=v.destroyblock
 			data[landId].permissions.allow_place=v.putblock
 			data[landId].permissions.allow_use_item=v.useitem

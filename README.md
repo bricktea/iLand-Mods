@@ -11,4 +11,12 @@
  ```
   - 将在`output-data`目录下生成`owners.json`和`data.json`，复制到iland数据文件目录下覆盖即可
 
+##### pland -> iLand
+> 参考land-g7，但pland可以保留更多配置
+ - 将`land.json`重命名为`pland.json`放到`input-data`目录下。
+ - 确保您安装了Lua解释器
+ ```
+ lua pland.lua
+ ```
+
 ##### BDXLand -> iLand
