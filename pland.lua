@@ -14,16 +14,18 @@ local data={}
 local landId=''
 for i,v in pairs(pldata.landdata) do
     local info=lib.split(i,':')
-    local result={lib.formatXYZ(v.x1,v.y1,v.z1,v.x2,v.y2,v.z2)}
+    local pos1=lib.split(info[2],'.')
+    local pos2=lib.split(info[3],'.')
+    local result={lib.fmCube(pos1[1],pos1[2],pos1[3],pos2[1],pos2[2],pos2[3])}
     local posA=result[1]
     local posB=result[2]
     if info[1]=='2D' then
-        posA.y=0
+        posA.y=1
         posB.y=255
     end
     landId=lib.getGuid()
     -- DATA
-    data[landId]={} --data Version: iLand-1.1.3
+    data[landId]={} --data Version: iLand-1.1.4
     data[landId].range={}
     data[landId].settings={}
     data[landId].settings.share=v.shareplayer
@@ -48,8 +50,8 @@ for i,v in pairs(pldata.landdata) do
     data[landId].range.start_position[3]=posA.z
     data[landId].range.end_position={}
     data[landId].range.end_position[1]=posB.x
-    data[landId].range.end_position[2]=posB.z
-    data[landId].range.end_position[3]=posB.y
+    data[landId].range.end_position[2]=posB.y
+    data[landId].range.end_position[3]=posB.z
     data[landId].range.dim=v.worldid
     data[landId].permissions={}
     data[landId].permissions.allow_destory=v.destroyblock

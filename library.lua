@@ -54,13 +54,12 @@ function _SHARE.buildVec(x,y,z,dim)
 	end
 	return t
 end
-function _SHARE.formatXYZ(sX,sY,sZ,eX,eY,eZ)
-	local A=_SHARE.buildVec(sX,sY,sZ)
-	local B=_SHARE.buildVec(eX,eY,eZ)
-	local tmp1
-	if A.x>B.x then tmp1=A.x;A.x=B.x;B.x=tmp1 end
-	if A.y>B.y then tmp1=A.y;A.y=B.y;B.y=tmp1 end
-	if A.z>B.z then tmp1=A.z;A.z=B.z;B.z=tmp1 end
+function _SHARE.fmCube(sX,sY,sZ,eX,eY,eZ)
+	local A=_SHARE.buildVec(tonumber(sX),tonumber(sY),tonumber(sZ))
+	local B=_SHARE.buildVec(tonumber(eX),tonumber(eY),tonumber(eZ))
+	if A.x>B.x then A.x,B.x = B.x,A.x end
+	if A.y>B.y then A.y,B.y = B.y,A.y end
+	if A.z>B.z then A.z,B.z = B.z,A.z end
 	return A,B
 end
 function _SHARE.test()
