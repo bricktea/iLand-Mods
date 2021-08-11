@@ -1,0 +1,1551 @@
+{
+    "Lands": [
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535427252714825",
+            "Dimension": 0,
+            "X1": 103712,
+            "Y1": 59,
+            "Z1": 102527,
+            "X2": 103727,
+            "Y2": 59,
+            "Z2": 102512,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535417889911392"
+                },
+                {
+                    "PlayerXuid": "2535468716076685"
+                }
+            ]
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535469651540581",
+            "Dimension": 0,
+            "X1": -542,
+            "Y1": 22,
+            "Z1": -379,
+            "X2": -541,
+            "Y2": 21,
+            "Z2": -380,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535465506361032",
+            "Dimension": 0,
+            "X1": 111,
+            "Y1": 18,
+            "Z1": 605,
+            "X2": 119,
+            "Y2": 14,
+            "Z2": 597,
+            "Sign.Displayname": "光明地牢",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535409206421223"
+                },
+                {
+                    "PlayerXuid": "2535440458242776"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535465506361032",
+            "Dimension": 0,
+            "X1": 417,
+            "Y1": 69,
+            "Z1": 150,
+            "X2": 437,
+            "Y2": 77,
+            "Z2": 171,
+            "Sign.Displayname": "光明圣殿",
+            "Public": {
+                "DropItem": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535409206421223"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535448241154958",
+            "Dimension": 0,
+            "X1": 859,
+            "Y1": 63,
+            "Z1": -24,
+            "X2": 850,
+            "Y2": 63,
+            "Z2": -28,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535469651540581",
+            "Dimension": 0,
+            "X1": -49,
+            "Y1": 60,
+            "Z1": 783,
+            "X2": -52,
+            "Y2": 62,
+            "Z2": 777,
+            "TeleportPos": {
+                "x": -49.64942,
+                "y": 60.0,
+                "z": 782.796448
+            },
+            "Sign.Displayname": "狗子家",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535448177168900",
+            "Dimension": 0,
+            "X1": -123,
+            "Y1": 81,
+            "Z1": -65,
+            "X2": -127,
+            "Y2": 81,
+            "Z2": -58,
+            "Sign.Displayname": "§l§o§6kj§2狗§b舍",
+            "Public": {},
+            "DefaultShared": {
+                "UseBucket": false,
+                "AttackPlayer": false,
+                "AttackMob": false,
+                "DestroyBlock": false,
+                "OpenChest": false,
+                "ContainerInteracted": false,
+                "FarmLandDecay": false
+            },
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535409206421223",
+                    "UseItem": true,
+                    "UseBucket": true,
+                    "DestroyBlock": true,
+                    "PickUpItem": true,
+                    "PlaceBlock": true,
+                    "OpenChest": true,
+                    "ContainerInteracted": true,
+                    "ActorInteracted": true
+                },
+                {
+                    "PlayerXuid": "2535431544971018"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535431544971018",
+            "Dimension": 0,
+            "X1": -2412,
+            "Y1": 18,
+            "Z1": 2998,
+            "X2": -2401,
+            "Y2": 30,
+            "Z2": 2964,
+            "Sign.Displayname": "§e§l筱§a玖§dの§e筱§a家",
+            "Public": {
+                "LiquidFlowInto": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535444482534389"
+                },
+                {
+                    "PlayerXuid": "2535440458242776"
+                },
+                {
+                    "PlayerXuid": "2535406880911868"
+                },
+                {
+                    "PlayerXuid": "2535412370351949"
+                },
+                {
+                    "PlayerXuid": "2535469651540581"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535440458242776",
+            "Dimension": 0,
+            "X1": 136,
+            "Y1": 64,
+            "Z1": 436,
+            "X2": 156,
+            "Y2": 69,
+            "Z2": 416,
+            "Sign.Displayname": "公共回收商店",
+            "Sign.Message": "你可以在这里设置回收箱子，站在箱子上输入/recyclechest即可",
+            "Public": {
+                "DropItem": true,
+                "PickUpItem": true,
+                "OpenChest": true,
+                "ContainerInteracted": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535431544971018"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535440458242776",
+            "Dimension": 0,
+            "X1": 156,
+            "Y1": 76,
+            "Z1": 416,
+            "X2": 136,
+            "Y2": 70,
+            "Z2": 436,
+            "Sign.Displayname": "公共出售商店",
+            "Sign.Message": "你可以在这里设置出售箱子，站在箱子上输入/shopchest即可",
+            "Public": {
+                "UseItem": true,
+                "DropItem": true,
+                "PickUpItem": true,
+                "OpenChest": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535431544971018"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535469651540581",
+            "Dimension": 0,
+            "X1": -2406,
+            "Y1": 37,
+            "Z1": 3011,
+            "X2": -2418,
+            "Y2": 32,
+            "Z2": 3023,
+            "TeleportPos": {
+                "x": -2417.7,
+                "y": 33.0,
+                "z": 3012.36084
+            },
+            "Sign.Displayname": "§l§o§f§d柠檬§6の§e小窝",
+            "Sign.Message": "§l§o§f§6仅供参观",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535440458242776"
+                },
+                {
+                    "PlayerXuid": "2535444482534389"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535417889911392",
+            "Dimension": 0,
+            "X1": 103087,
+            "Y1": 68,
+            "Z1": 102593,
+            "X2": 103097,
+            "Y2": 72,
+            "Z2": 102603,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535440458242776",
+            "Dimension": 0,
+            "X1": -2426,
+            "Y1": 38,
+            "Z1": 3002,
+            "X2": -2394,
+            "Y2": 43,
+            "Z2": 2970,
+            "Sign.Displayname": "§l§o§4失乐园",
+            "Public": {
+                "LiquidFlowInto": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535406880911868"
+                },
+                {
+                    "PlayerXuid": "2535444482534389"
+                },
+                {
+                    "PlayerXuid": "2535412370351949"
+                },
+                {
+                    "PlayerXuid": "2535448689848012"
+                },
+                {
+                    "PlayerXuid": "2535431544971018"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535440458242776",
+            "Dimension": 0,
+            "X1": -2421,
+            "Y1": 37,
+            "Z1": 2983,
+            "X2": -2411,
+            "Y2": 32,
+            "Z2": 3003,
+            "Sign.Displayname": "§l§o§9暗之森",
+            "Public": {
+                "LiquidFlowInto": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535406880911868"
+                },
+                {
+                    "PlayerXuid": "2535444482534389"
+                },
+                {
+                    "PlayerXuid": "2535412370351949"
+                },
+                {
+                    "PlayerXuid": "2535448689848012"
+                },
+                {
+                    "PlayerXuid": "2535431544971018"
+                }
+            ]
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535440458242776",
+            "Dimension": 2,
+            "X1": -6,
+            "Y1": 62,
+            "Z1": -6,
+            "X2": 6,
+            "Y2": 61,
+            "Z2": 6,
+            "Sign.Displayname": "打龙收费（bushi",
+            "Sign.Message": "§l§aCC我劝你好自为之 ——筱玖",
+            "Public": {
+                "UseItem": true,
+                "UseBucket": true,
+                "AttackPlayer": true,
+                "AttackMob": true,
+                "DestroyBlock": true,
+                "DropItem": true,
+                "LevelExplode": true,
+                "LiquidFlowInto": true,
+                "FireBurnDown": true,
+                "BlockFallInto": true,
+                "PickUpItem": true,
+                "PlaceBlock": true,
+                "OpenChest": true,
+                "ContainerInteracted": true,
+                "ActorInteracted": true,
+                "FarmLandDecay": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535415644186212",
+            "Dimension": 0,
+            "X1": -1727,
+            "Y1": 63,
+            "Z1": -6452,
+            "X2": -1728,
+            "Y2": 64,
+            "Z2": -6451,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535427252714825",
+            "Dimension": 0,
+            "X1": 103091,
+            "Y1": 68,
+            "Z1": 102607,
+            "X2": 103067,
+            "Y2": 66,
+            "Z2": 102622,
+            "Public": {
+                "FireBurnDown": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535431888589473"
+                },
+                {
+                    "PlayerXuid": "2535417889911392"
+                },
+                {
+                    "PlayerXuid": "2535440458242776"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535411430837690",
+            "Dimension": 0,
+            "X1": 390,
+            "Y1": 63,
+            "Z1": 709,
+            "X2": 397,
+            "Y2": 64,
+            "Z2": 707,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535411430837690",
+            "Dimension": 0,
+            "X1": 360,
+            "Y1": 71,
+            "Z1": 686,
+            "X2": 390,
+            "Y2": 67,
+            "Z2": 704,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535448177168900",
+            "Dimension": 0,
+            "X1": -124,
+            "Y1": 77,
+            "Z1": -74,
+            "X2": -126,
+            "Y2": 81,
+            "Z2": -66,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535445979243540",
+            "Dimension": 0,
+            "X1": -9180,
+            "Y1": 70,
+            "Z1": -2669,
+            "X2": -9245,
+            "Y2": 71,
+            "Z2": -2585,
+            "TeleportPos": {
+                "x": -9224.521,
+                "y": 69.5,
+                "z": -2604.02368
+            },
+            "Sign.Displayname": "大佬给点钱吧",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535414975508698",
+            "Dimension": 0,
+            "X1": -7689,
+            "Y1": 66,
+            "Z1": 1020,
+            "X2": -7689,
+            "Y2": 67,
+            "Z2": 1024,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535434152521352",
+            "Dimension": 0,
+            "X1": -2466,
+            "Y1": 64,
+            "Z1": 2979,
+            "X2": -2529,
+            "Y2": 63,
+            "Z2": 2915,
+            "Sign.Displayname": "地皮：规格64*65",
+            "Sign.Message": "暂时不对外开放",
+            "Public": {
+                "AttackMob": true,
+                "DropItem": true,
+                "PickUpItem": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535440458242776"
+                },
+                {
+                    "PlayerXuid": "2535422478367121"
+                },
+                {
+                    "PlayerXuid": "2535446637023757"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535432654602261",
+            "Dimension": 0,
+            "X1": 2714,
+            "Y1": 64,
+            "Z1": -7139,
+            "X2": 2717,
+            "Y2": 61,
+            "Z2": -7139,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535414975508698",
+            "Dimension": 0,
+            "X1": -7772,
+            "Y1": 63,
+            "Z1": 1014,
+            "X2": -7775,
+            "Y2": 65,
+            "Z2": 1014,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535448177168900",
+            "Dimension": 0,
+            "X1": -225,
+            "Y1": 51,
+            "Z1": 66,
+            "X2": -220,
+            "Y2": 58,
+            "Z2": 71,
+            "Sign.Displayname": "§6KJ§3溺尸§d笼",
+            "Public": {
+                "FireBurnDown": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535440458242776"
+                },
+                {
+                    "PlayerXuid": "2535419440297886"
+                }
+            ]
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535440379334444",
+            "Dimension": 0,
+            "X1": -174,
+            "Y1": 71,
+            "Z1": -174,
+            "X2": -173,
+            "Y2": 68,
+            "Z2": -166,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535457986836626",
+            "Dimension": 0,
+            "X1": -2368,
+            "Y1": 34,
+            "Z1": 3023,
+            "X2": -2332,
+            "Y2": 21,
+            "Z2": 2968,
+            "Sign.Displayname": "awa 龙龙的小洞穴",
+            "Sign.Message": "咕咕咕？",
+            "Public": {},
+            "DefaultShared": {
+                "UseItem": false,
+                "UseBucket": false,
+                "AttackPlayer": false,
+                "AttackMob": false,
+                "DestroyBlock": false,
+                "DropItem": false,
+                "PickUpItem": false,
+                "OpenChest": false,
+                "ContainerInteracted": false,
+                "ActorInteracted": false,
+                "FarmLandDecay": false
+            },
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535440458242776",
+                    "UseItem": true,
+                    "UseBucket": true,
+                    "AttackPlayer": true,
+                    "AttackMob": true,
+                    "DestroyBlock": true,
+                    "DropItem": true,
+                    "PickUpItem": true,
+                    "PlaceBlock": true,
+                    "OpenChest": true,
+                    "ContainerInteracted": true,
+                    "ActorInteracted": true,
+                    "FarmLandDecay": true
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535414975508698",
+            "Dimension": 0,
+            "X1": -7725,
+            "Y1": 71,
+            "Z1": 1024,
+            "X2": -7733,
+            "Y2": 74,
+            "Z2": 1016,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535415740810417",
+            "Dimension": 0,
+            "X1": -9289,
+            "Y1": 62,
+            "Z1": -2618,
+            "X2": -9289,
+            "Y2": 64,
+            "Z2": -2606,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535415740810417",
+            "Dimension": 0,
+            "X1": -9278,
+            "Y1": 69,
+            "Z1": -2613,
+            "X2": -9278,
+            "Y2": 74,
+            "Z2": -2603,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535415740810417",
+            "Dimension": 0,
+            "X1": -9279,
+            "Y1": 69,
+            "Z1": -2613,
+            "X2": -9290,
+            "Y2": 74,
+            "Z2": -2613,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535415740810417",
+            "Dimension": 0,
+            "X1": -9290,
+            "Y1": 69,
+            "Z1": -2612,
+            "X2": -9290,
+            "Y2": 73,
+            "Z2": -2603,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535415740810417",
+            "Dimension": 0,
+            "X1": -9279,
+            "Y1": 74,
+            "Z1": -2603,
+            "X2": -9289,
+            "Y2": 68,
+            "Z2": -2603,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535415740810417",
+            "Dimension": 0,
+            "X1": -9306,
+            "Y1": 62,
+            "Z1": -2601,
+            "X2": -9289,
+            "Y2": 62,
+            "Z2": -2588,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535450768477861",
+            "Dimension": 0,
+            "X1": 32011,
+            "Y1": 94,
+            "Z1": -32059,
+            "X2": 32016,
+            "Y2": 90,
+            "Z2": -32066,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535422744377213"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535450768477861",
+            "Dimension": 0,
+            "X1": 32009,
+            "Y1": 94,
+            "Z1": -32057,
+            "X2": 32011,
+            "Y2": 93,
+            "Z2": -32055,
+            "Sign.Displayname": "附魔台",
+            "Public": {
+                "UseItem": true,
+                "UseBucket": true,
+                "AttackPlayer": true,
+                "AttackMob": true,
+                "DestroyBlock": true,
+                "DropItem": true,
+                "BlockFallInto": true,
+                "PickUpItem": true,
+                "PlaceBlock": true,
+                "OpenChest": true,
+                "ContainerInteracted": true,
+                "ActorInteracted": true,
+                "FarmLandDecay": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535443923780483",
+            "Dimension": 0,
+            "X1": -128,
+            "Y1": 115,
+            "Z1": -36,
+            "X2": -148,
+            "Y2": 115,
+            "Z2": -17,
+            "TeleportPos": {
+                "x": -138.7356,
+                "y": 119.0,
+                "z": -25.3238316
+            },
+            "Sign.Displayname": "筱的goodhome",
+            "Sign.Message": "nice～～～(◦˙▽˙◦)",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535440458242776"
+                },
+                {
+                    "PlayerXuid": "2535469651540581",
+                    "AttackPlayer": false,
+                    "DestroyBlock": false,
+                    "PlaceBlock": false,
+                    "OpenChest": false
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535470832312642",
+            "Dimension": 0,
+            "X1": 33863,
+            "Y1": 37,
+            "Z1": 72773,
+            "X2": 33890,
+            "Y2": 43,
+            "Z2": 72735,
+            "TeleportPos": {
+                "x": 33882.125,
+                "y": 38.0,
+                "z": 72756.98
+            },
+            "Sign.Message": "重见光明",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535429722879900"
+                },
+                {
+                    "PlayerXuid": "2535450609084101"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535429722879900",
+            "Dimension": 0,
+            "X1": 4411,
+            "Y1": 67,
+            "Z1": 8866,
+            "X2": 4420,
+            "Y2": 76,
+            "Z2": 8881,
+            "TeleportPos": {
+                "x": 4417.015,
+                "y": 67.0,
+                "z": 8874.781
+            },
+            "Sign.Displayname": "sangjieya的温暖小屋",
+            "Sign.Message": "awa",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535418537700605"
+                },
+                {
+                    "PlayerXuid": "2535470832312642"
+                },
+                {
+                    "PlayerXuid": "2535450609084101"
+                },
+                {
+                    "PlayerXuid": "2535443316219376"
+                },
+                {
+                    "PlayerXuid": "2535421831295550"
+                }
+            ]
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535456766068573",
+            "Dimension": 0,
+            "X1": -9076,
+            "Y1": 65,
+            "Z1": 7588,
+            "X2": -9082,
+            "Y2": 64,
+            "Z2": 7582,
+            "TeleportPos": {
+                "x": -9078.399,
+                "y": 65.0,
+                "z": 7585.784
+            },
+            "Sign.Displayname": "§l§6家§f",
+            "Sign.Message": "§l§3请不要破坏§4领地周围§2拜托了这真的很重要",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535430246769143"
+                },
+                {
+                    "PlayerXuid": "2535453070243049"
+                },
+                {
+                    "PlayerXuid": "2535433565954468"
+                }
+            ]
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535434152521352",
+            "Dimension": 1,
+            "X1": -282,
+            "Y1": 32,
+            "Z1": 348,
+            "X2": -264,
+            "Y2": 31,
+            "Z2": 332,
+            "Sign.Displayname": "卡慕の老家",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535443923780483",
+            "Dimension": 0,
+            "X1": -81,
+            "Y1": 104,
+            "Z1": 5,
+            "X2": -92,
+            "Y2": 99,
+            "Z2": 1,
+            "TeleportPos": {
+                "x": -85.63674,
+                "y": 101.0,
+                "z": 3.33934164
+            },
+            "Sign.Displayname": "刷怪塔",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535443923780483",
+            "Dimension": 0,
+            "X1": -156,
+            "Y1": 111,
+            "Z1": -15,
+            "X2": -149,
+            "Y2": 111,
+            "Z2": -36,
+            "TeleportPos": {
+                "x": -151.645447,
+                "y": 112.0,
+                "z": -24.9372311
+            },
+            "Sign.Displayname": "侧院",
+            "Sign.Message": "好东西",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535471335281330",
+            "Dimension": 0,
+            "X1": -7616,
+            "Y1": 65,
+            "Z1": -9919,
+            "X2": -7609,
+            "Y2": 65,
+            "Z2": -9924,
+            "TeleportPos": {
+                "x": -7608.51758,
+                "y": 66.0,
+                "z": -9920.926
+            },
+            "Sign.Displayname": "滑稽",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535445067638663"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535456766068573",
+            "Dimension": 0,
+            "X1": -9052,
+            "Y1": 63,
+            "Z1": 7543,
+            "X2": -9060,
+            "Y2": 62,
+            "Z2": 7551,
+            "Sign.Displayname": "§l§2农田§f",
+            "Sign.Message": "§l§3这不是小农田吗，几天不见，这么拉了",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535456766068573",
+            "Dimension": 0,
+            "X1": -9069,
+            "Y1": 67,
+            "Z1": 7585,
+            "X2": -9071,
+            "Y2": 63,
+            "Z2": 7590,
+            "TeleportPos": {
+                "x": -9069.489,
+                "y": 64.125,
+                "z": 7586.42529
+            },
+            "Sign.Displayname": "§l§9烤鸡机§f",
+            "Sign.Message": "§l§6无限的羽毛和鸡肉",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535433565954468"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535450768477861",
+            "Dimension": 0,
+            "X1": 32071,
+            "Y1": 88,
+            "Z1": -32056,
+            "X2": 32042,
+            "Y2": 89,
+            "Z2": -32058,
+            "Sign.Displayname": "路",
+            "Public": {
+                "UseItem": true,
+                "UseBucket": true,
+                "AttackPlayer": true,
+                "AttackMob": true,
+                "DestroyBlock": true,
+                "DropItem": true,
+                "LiquidFlowInto": true,
+                "BlockFallInto": true,
+                "PickUpItem": true,
+                "PlaceBlock": true,
+                "OpenChest": true,
+                "ContainerInteracted": true,
+                "ActorInteracted": true,
+                "FarmLandDecay": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535469651540581",
+            "Dimension": 0,
+            "X1": -2386,
+            "Y1": 29,
+            "Z1": 3002,
+            "X2": -2378,
+            "Y2": 25,
+            "Z2": 2993,
+            "TeleportPos": {
+                "x": -2381.42847,
+                "y": 26.0,
+                "z": 2998.44263
+            },
+            "Sign.Displayname": "§l§o§f§d柠檬§6の§e黑心炼药厂",
+            "Sign.Message": "§a药水自取",
+            "Public": {
+                "UseItem": true,
+                "UseBucket": true,
+                "AttackMob": true,
+                "DropItem": true,
+                "PickUpItem": true,
+                "OpenChest": true,
+                "ContainerInteracted": true,
+                "ActorInteracted": true,
+                "FarmLandDecay": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535443923780483",
+            "Dimension": 0,
+            "X1": -126,
+            "Y1": 113,
+            "Z1": -16,
+            "X2": -148,
+            "Y2": 111,
+            "Z2": -15,
+            "Sign.Displayname": "走廊",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535450768477861",
+            "Dimension": 0,
+            "X1": 32021,
+            "Y1": 95,
+            "Z1": -32047,
+            "X2": 32016,
+            "Y2": 97,
+            "Z2": -32045,
+            "Public": {
+                "UseItem": true,
+                "UseBucket": true,
+                "AttackPlayer": true,
+                "AttackMob": true,
+                "DestroyBlock": true,
+                "DropItem": true,
+                "PickUpItem": true,
+                "PlaceBlock": true,
+                "OpenChest": true,
+                "ContainerInteracted": true,
+                "ActorInteracted": true,
+                "FarmLandDecay": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535440458242776",
+            "Dimension": 0,
+            "X1": 89971,
+            "Y1": 63,
+            "Z1": 69987,
+            "X2": 90097,
+            "Y2": 67,
+            "Z2": 69875,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535450609084101"
+                },
+                {
+                    "PlayerXuid": "2535446637023757"
+                },
+                {
+                    "PlayerXuid": "2535406880911868",
+                    "UseItem": true,
+                    "UseBucket": true,
+                    "AttackPlayer": true,
+                    "AttackMob": true,
+                    "DestroyBlock": true,
+                    "DropItem": true,
+                    "PickUpItem": true,
+                    "PlaceBlock": true,
+                    "OpenChest": true,
+                    "ContainerInteracted": true,
+                    "ActorInteracted": true,
+                    "FarmLandDecay": true
+                }
+            ]
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535446637023757",
+            "Dimension": 0,
+            "X1": -9013,
+            "Y1": 67,
+            "Z1": -1619,
+            "X2": -8978,
+            "Y2": 67,
+            "Z2": -1645,
+            "TeleportPos": {
+                "x": -8995.303,
+                "y": 68.0,
+                "z": -1622.40417
+            },
+            "Sign.Displayname": "gg和oo3的仓库",
+            "Public": {
+                "DropItem": true,
+                "PickUpItem": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535450609084101"
+                },
+                {
+                    "PlayerXuid": "2535440458242776"
+                }
+            ]
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535446637023757",
+            "Dimension": 0,
+            "X1": -9044,
+            "Y1": 68,
+            "Z1": -1537,
+            "X2": -8978,
+            "Y2": 67,
+            "Z2": -1618,
+            "Sign.Displayname": "gg和003的生电基地",
+            "Public": {
+                "FireBurnDown": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535450609084101"
+                },
+                {
+                    "PlayerXuid": "2535413052769941"
+                },
+                {
+                    "PlayerXuid": "2535429722879900"
+                },
+                {
+                    "PlayerXuid": "2535421831295550"
+                },
+                {
+                    "PlayerXuid": "2535406880911868"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535414975508698",
+            "Dimension": 0,
+            "X1": -7770,
+            "Y1": 63,
+            "Z1": 1006,
+            "X2": -7767,
+            "Y2": 66,
+            "Z2": 1004,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535469651540581",
+            "Dimension": 1,
+            "X1": -397,
+            "Y1": 32,
+            "Z1": 398,
+            "X2": -398,
+            "Y2": 31,
+            "Z2": 397,
+            "TeleportPos": {
+                "x": -396.543549,
+                "y": 32.0,
+                "z": 397.9178
+            },
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535469651540581",
+            "Dimension": 0,
+            "X1": 7783,
+            "Y1": 64,
+            "Z1": -4820,
+            "X2": 7784,
+            "Y2": 63,
+            "Z2": -4819,
+            "TeleportPos": {
+                "x": 7783.299,
+                "y": 64.0,
+                "z": -4818.842
+            },
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535453070243049",
+            "Dimension": 0,
+            "X1": -9088,
+            "Y1": 62,
+            "Z1": 7581,
+            "X2": -9094,
+            "Y2": 70,
+            "Z2": 7587,
+            "TeleportPos": {
+                "x": -9089.255,
+                "y": 67.0,
+                "z": 7584.365
+            },
+            "Sign.Displayname": "fubuki",
+            "Sign.Message": "请不要破坏☆周围领地☆，拜托了这真的很重要",
+            "Public": {
+                "UseItem": true,
+                "UseBucket": true,
+                "AttackPlayer": true,
+                "AttackMob": true,
+                "DestroyBlock": true,
+                "DropItem": true,
+                "PickUpItem": true,
+                "PlaceBlock": true,
+                "OpenChest": true,
+                "ContainerInteracted": true,
+                "ActorInteracted": true,
+                "FarmLandDecay": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535430246769143"
+                },
+                {
+                    "PlayerXuid": "2535456766068573"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535469651540581",
+            "Dimension": 0,
+            "X1": -2455,
+            "Y1": 65,
+            "Z1": 3018,
+            "X2": -2454,
+            "Y2": 66,
+            "Z2": 3017,
+            "TeleportPos": {
+                "x": -2454.5105,
+                "y": 65.0,
+                "z": 3018.41357
+            },
+            "Sign.Displayname": "传送点3",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535430246769143",
+            "Dimension": 0,
+            "X1": -9075,
+            "Y1": 63,
+            "Z1": 7576,
+            "X2": -9072,
+            "Y2": 59,
+            "Z2": 7573,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535440458242776",
+            "Dimension": 0,
+            "X1": 6355,
+            "Y1": 64,
+            "Z1": -4893,
+            "X2": 6419,
+            "Y2": 66,
+            "Z2": -4957,
+            "Sign.Displayname": "§4§l红尘酒馆",
+            "Sign.Message": "§l§6亲爱的冒险家，来喝一杯吗～",
+            "Public": {
+                "AttackMob": true,
+                "DropItem": true,
+                "PickUpItem": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535406880911868"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535469651540581",
+            "Dimension": 0,
+            "X1": 25259,
+            "Y1": 64,
+            "Z1": -30294,
+            "X2": 25260,
+            "Y2": 65,
+            "Z2": -30293,
+            "TeleportPos": {
+                "x": 25259.34,
+                "y": 64.0,
+                "z": -30293.0234
+            },
+            "Sign.Displayname": "临时1",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535443923780483",
+            "Dimension": 0,
+            "X1": -8571,
+            "Y1": 63,
+            "Z1": 6690,
+            "X2": -8561,
+            "Y2": 70,
+            "Z2": 6665,
+            "TeleportPos": {
+                "x": -8570.3,
+                "y": 63.0,
+                "z": 6690.275
+            },
+            "Sign.Displayname": "筱的农场",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535414975508698",
+            "Dimension": 0,
+            "X1": -7722,
+            "Y1": 64,
+            "Z1": 1052,
+            "X2": -7719,
+            "Y2": 67,
+            "Z2": 1051,
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535469651540581",
+            "Dimension": 0,
+            "X1": 30087,
+            "Y1": 63,
+            "Z1": -33083,
+            "X2": 30088,
+            "Y2": 64,
+            "Z2": -33084,
+            "TeleportPos": {
+                "x": 30087.55,
+                "y": 63.0,
+                "z": -33083.7266
+            },
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535430246769143",
+            "Dimension": 0,
+            "X1": -9076,
+            "Y1": 63,
+            "Z1": 7562,
+            "X2": -9095,
+            "Y2": 62,
+            "Z2": 7576,
+            "TeleportPos": {
+                "x": -9080.357,
+                "y": 63.0,
+                "z": 7562.997
+            },
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535456766068573"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535469651540581",
+            "Dimension": 0,
+            "X1": 760,
+            "Y1": 17,
+            "Z1": -7780,
+            "X2": 759,
+            "Y2": 18,
+            "Z2": -7779,
+            "TeleportPos": {
+                "x": 760.3,
+                "y": 17.0,
+                "z": -7779.3
+            },
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "2D",
+            "PlayerXuid": "2535446637023757",
+            "Dimension": 0,
+            "X1": 90043,
+            "Y1": 66,
+            "Z1": 69601,
+            "X2": 90070,
+            "Y2": 66,
+            "Z2": 69563,
+            "TeleportPos": {
+                "x": 90055.26,
+                "y": 124.0,
+                "z": 69571.42
+            },
+            "Sign.Displayname": "gg和003的致富之地",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": [
+                {
+                    "PlayerXuid": "2535450609084101"
+                }
+            ]
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535470832312642",
+            "Dimension": 0,
+            "X1": 33712,
+            "Y1": 61,
+            "Z1": 72722,
+            "X2": 33725,
+            "Y2": 73,
+            "Z2": 72716,
+            "Sign.Displayname": "猪人塔",
+            "Sign.Message": "苦力怕别尼玛再炸了",
+            "Public": {},
+            "DefaultShared": {},
+            "PlayersShared": []
+        },
+        {
+            "LandType": "3D",
+            "PlayerXuid": "2535408412531609",
+            "Dimension": 0,
+            "X1": 7776,
+            "Y1": 64,
+            "Z1": -4789,
+            "X2": 7760,
+            "Y2": 68,
+            "Z2": -4775,
+            "Public": {
+                "BlockFallInto": true
+            },
+            "DefaultShared": {},
+            "PlayersShared": []
+        }
+    ]
+}
