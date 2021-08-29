@@ -56,7 +56,6 @@ mc.regConsoleCmd('iconv','land converter',function(args){
                 ERROR("Something wrong in land ['"+key+"'], continue.")
                 return;
             }
-            UpdatePermission(landId,'allow_attack',land.attack)
             UpdatePermission(landId,'allow_destroy',land.destroyblock)
             UpdatePermission(landId,'allow_open_chest',land.openchest)
             UpdatePermission(landId,'allow_place',land.putblock)
@@ -82,7 +81,7 @@ mc.regConsoleCmd('iconv','land converter',function(args){
     // pfland
     if (args[0]=='pfland')
     {
-        var da = data.parseJson(file.readFrom(DATA_PATH+"pfland.json"))
+        var da = data.parseJson(file.readFrom(DATA_PATH+"testpfland.json"))
         Object.keys(da.Lands).forEach(function(key){
             var land = da.Lands[key]
             var spos = {x:land.X1,y:land.Y1,z:land.Z1}
@@ -105,10 +104,6 @@ mc.regConsoleCmd('iconv','land converter',function(args){
                 friends.push(pl.PlayerXuid)
             })
             UpdateSetting(landId,'share',friends)
-            if (land.DefaultShared.AttackMob!=null) // ShitMountain... 求问有无更好写法...
-            {
-                UpdatePermission(landId,'allow_attack',land.DefaultShared.AttackMob)
-            }
             if (land.DefaultShared.DestroyBlock!=null)
             {
                 UpdatePermission(landId,'allow_destroy',land.DefaultShared.DestroyBlock)
