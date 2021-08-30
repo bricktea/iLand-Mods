@@ -2,7 +2,7 @@
 var DATA_PATH = "plugins\\land-data\\"
 
 // dev mode
-if (true)
+if (false)
 {
     DATA_PATH = "plugins\\LXL_Plugins\\iLand\\land-data\\"
 }
