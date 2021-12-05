@@ -81,7 +81,7 @@ mc.regConsoleCmd('iconv','land converter',function(args){
     // pfland
     if (args[0]=='pfland')
     {
-        var da = data.parseJson(file.readFrom(DATA_PATH+"testpfland.json"))
+        var da = data.parseJson(file.readFrom(DATA_PATH+"pfland.json"))
         Object.keys(da.Lands).forEach(function(key){
             var land = da.Lands[key]
             var spos = {x:land.X1,y:land.Y1,z:land.Z1}
