@@ -1,158 +1,183 @@
-// load data
-var DATA_PATH = "plugins\\land-data\\"
+/* --------------------------------------//
 
-// dev mode
-if (false)
-{
-    DATA_PATH = "plugins\\LXL_Plugins\\iLand\\land-data\\"
+      Plugin   [ILand] Data converter.
+    
+// --------------------------------------*/
+
+let DATA_PATH = "plugins/land-data/"
+if (File.exists("EnableILandDevMode")) {
+    DATA_PATH = 'plugins/LXL_Plugins/iLand/land-data/'
 }
 
-// import iland apis
-var GetVersion = lxl.import("ILAPI_GetVersion")
-var CreateLand = lxl.import("ILAPI_CreateLand")
-var UpdatePermission = lxl.import("ILAPI_UpdatePermission")
-var UpdateSetting = lxl.import("ILAPI_UpdateSetting")
-
-// logger
-function INFO(msg)
-{
-    log("[ILand] |Conventer| "+msg)
+// Import apis from iLand.
+ImportedApis = {
+    Inited: false,
+    GetVersion: lxl.import("ILAPI_GetApiVersion"),
+    CreateLand: lxl.import("ILAPI_CreateLand"),
+    UpdatePermission: lxl.import("ILAPI_UpdatePermission"),
+    UpdateSetting: lxl.import("ILAPI_UpdateSetting")
 }
 
-function ERROR(msg)
-{
-    log("[ILand] |ERROR| "+msg)
-}
+// Init logger
+logger.setTitle('Converter')
+logger.setConsole(true)
 
-// main
-mc.regConsoleCmd('iconv','land converter',function(args){
-
-    // check iland
-    var ILVER = GetVersion()
-    if (ILVER!=null && ILVER < 224)
-    {
-        ERROR("ILand not found or too old, please update/install iland!")
-        return false
+// Startup.
+mc.listen('onServerStarted',function () {
+    if (!ImportedApis.GetVersion) {
+        logger.error('iLand is not installed or too old!')
+        return
+    }
+    let ver = ImportedApis.GetVersion()
+    if (ver!=200) {
+        logger.error('Unadapted ILAPI version(' + ver + ').')
+        return
+    }
+    ImportedApis.Inited = true;
+})
+mc.regConsoleCmd('iconv','land converter',function(args) {
+    
+    // Check ILAPI.
+    if (!ImportedApis.Inited) {
+        logger.error('ILAPI is not inited.')
+        return
     }
 
-    // pland
-    if (args[0]=='pland')
-    {
-        var da = data.parseJson(file.readFrom(DATA_PATH+"pland.json"))
-        Object.keys(da.landdata).forEach(function(key){
-            var land = da.landdata[key]
-            var owner = land.playerxuid
-            var spos = {x:land.x1,y:land.y1,z:land.z1}
-            var epos = {x:land.x2,y:land.y2,z:land.z2}
-            if (land.Dim == '2D')
-            {
-                spos.y=0
-                epos.y=255
+    // Convert pland data.
+    if (args[0] == 'pland') {
+        let res = JSON.parse(file.readFrom(DATA_PATH + 'pland.json'))
+        let count_all = Object.keys(res.landdata).length
+        let count_now = 0
+        Object.keys(res.landdata).forEach(function(key){
+            count_now += 1
+            let land = res.landdata[key]
+            let owner = land.playerxuid
+            let spos = {x:land.x1,y:land.y1,z:land.z1}
+            let epos = {x:land.x2,y:land.y2,z:land.z2}
+            if (land.Dim == '2D') {
+                spos.y = -64
+                epos.y = 320
             }
-            var dimid = land.worldid
-            var landId = CreateLand(owner,spos,epos,dimid)
-            if (!landId)
-            {
-                ERROR("Something wrong in land ['"+key+"'], continue.")
+            let dimid = land.worldid
+            let landId = ImportedApis.CreateLand(owner,spos,epos,dimid)
+            if (!landId) {
+                logger.error("RPC packet loss when convert land ['" + key + "'], skipping...")
                 return;
             }
-            UpdatePermission(landId,'allow_destroy',land.destroyblock)
-            UpdatePermission(landId,'allow_open_chest',land.openchest)
-            UpdatePermission(landId,'allow_place',land.putblock)
-            UpdateSetting(landId,'share',land.shareplayer)
-            if (land.sign.displayname!=null)
-            {
-                UpdateSetting(landId,'nickname',land.sign.displayname)
+            if (landId == -1) {
+                logger.error("The API found a problem when checking land ['" + key + "'], skipping...")
+                return
             }
-            if (land.sign.message!=null)
-            {
-                UpdateSetting(landId,'describe',land.sign.message)
+            ImportedApis.UpdatePermission(landId,'allow_destroy',land.destroyblock)
+            ImportedApis.UpdatePermission(landId,'allow_open_chest',land.openchest)
+            ImportedApis.UpdatePermission(landId,'allow_place',land.putblock)
+            ImportedApis.UpdateSetting(landId,'share',land.shareplayer)
+            if (land.sign.displayname) {
+                ImportedApis.UpdateSetting(landId,'nickname',land.sign.displayname)
             }
-            if (land.sign.push_block!=null)
-            {
-                UpdateSetting(landId,'ev_piston_push',land.sign.push_block)
+            if (land.sign.message) {
+                ImportedApis.UpdateSetting(landId,'describe',land.sign.message)
             }
-            INFO('PLand => landId: '+landId+" owner: "+owner)
+            if (land.sign.push_block) {
+                ImportedApis.UpdateSetting(landId,'ev_piston_push',land.sign.push_block)
+            }
+            logger.info('PLand >> (' + count_now + '/' + count_all + ') landId: ' + landId + " owner: " + owner)
         })
-        INFO('PLand => Complete, converted '+Object.keys(da.landdata).length+" lands.")
-        return false
+        logger.info('PLand >> Complete, converted ' + count_all + " lands.")
+        return
     }
 
-    // pfland
-    if (args[0]=='pfland')
-    {
-        var da = data.parseJson(file.readFrom(DATA_PATH+"pfland.json"))
-        Object.keys(da.Lands).forEach(function(key){
-            var land = da.Lands[key]
-            var spos = {x:land.X1,y:land.Y1,z:land.Z1}
-            var epos = {x:land.X2,y:land.Y2,z:land.Z2}
-            var dimid = land.Dimension
-            var owner = land.PlayerXuid
-            if (land.LandType=="2D")
-            {
-                spos.y=0
-                epos.y=255
+    // Convert pfland data.
+    if (args[0] == 'pfland') {
+        let res = JSON.parse(file.readFrom(DATA_PATH+"pfland.json"))
+        let count_all = res.Lands.length
+        let count_now = 0
+        Object.keys(res.Lands).forEach(function(key) {
+            count_now += 1
+            let land = res.Lands[key]
+            let spos = {x:land.X1,y:land.Y1,z:land.Z1}
+            let epos = {x:land.X2,y:land.Y2,z:land.Z2}
+            let dimid = land.Dimension
+            let owner = land.PlayerXuid
+            if (land.LandType == '2D') {
+                spos.y = -64
+                epos.y = 320
             }
-            var landId = CreateLand(owner,spos,epos,dimid)
-            if (!landId)
-            {
-                ERROR("Something wrong in land ['"+key+"'], continue.")
+            let landId = ImportedApis.CreateLand(owner,spos,epos,dimid)
+            if (!landId) {
+                logger.error("RPC packet loss when convert land ['" + key + "'], skipping...")
                 return;
             }
-            var friends = new Array()
+            if (landId == -1) {
+                logger.error("The API found a problem when checking land ['" + key + "'], skipping...")
+                return
+            }
+            let friends = new Array()
             land.PlayersShared.forEach(function(pl,index){
                 friends.push(pl.PlayerXuid)
             })
-            UpdateSetting(landId,'share',friends)
-            if (land.DefaultShared.DestroyBlock!=null)
-            {
-                UpdatePermission(landId,'allow_destroy',land.DefaultShared.DestroyBlock)
+            ImportedApis.UpdateSetting(landId,'share',friends)
+            if (land.Public.UseBucket) {
+                ImportedApis.UpdatePermission(landId,'use_bucket',land.Public.UseBucket)
             }
-            if (land.DefaultShared.DropItem!=null)
-            {
-                UpdatePermission(landId,'allow_dropitem',land.DefaultShared.DropItem)
+            if (land.Public.AttackPlayer) {
+                ImportedApis.UpdatePermission(landId,'allow_attack_player',land.Public.AttackPlayer)
             }
-            if (land.DefaultShared.PickUpItem!=null)
-            {
-                UpdatePermission(landId,'allow_pickupitem',land.DefaultShared.PickUpItem)
+            if (land.Public.AttackMob) {
+                ImportedApis.UpdatePermission(landId,'allow_attack_mobs',land.Public.AttackMob)
             }
-            if (land.DefaultShared.PlaceBlock!=null)
-            {
-                UpdatePermission(landId,'allow_place',land.DefaultShared.PlaceBlock)
+            if (land.Public.DestroyBlock) {
+                ImportedApis.UpdatePermission(landId,'allow_destroy',land.Public.DestroyBlock)
             }
-            if (land.DefaultShared.OpenChest!=null)
-            {
-                UpdatePermission(landId,'allow_open_chest',land.DefaultShared.OpenChest)
+            if (land.Public.DropItem) {
+                ImportedApis.UpdatePermission(landId,'allow_dropitem',land.Public.DropItem)
             }
-            if (land.DefaultShared.FarmLandDecay!=null)
-            {
-                UpdateSetting(landId,'ev_farmland_decay',land.DefaultShared.FarmLandDecay)
+            if (land.Public.PickUpItem) {
+                ImportedApis.UpdatePermission(landId,'allow_pickupitem',land.Public.PickUpItem)
             }
-            if (land['Sign.Displayname']!=null)
-            {
-                UpdateSetting(landId,'nickname',land['Sign.Displayname'])
+            if (land.Public.PlaceBlock) {
+                ImportedApis.UpdatePermission(landId,'allow_place',land.Public.PlaceBlock)
             }
-            if (land['Sign.Message']!=null)
-            {
-                UpdateSetting(landId,'describe',land['Sign.Message'])
+            if (land.Public.OpenChest) {
+                ImportedApis.UpdatePermission(landId,'allow_open_chest',land.Public.OpenChest)
             }
-            INFO('PFLand => landId: '+landId+" owner: "+owner)
+            if (land.Public.FarmLandDecay) {
+                ImportedApis.UpdateSetting(landId,'ev_farmland_decay',land.Public.FarmLandDecay)
+            }
+            if (land.Public.UseItemFrame) {
+                ImportedApis.UpdateSetting(landId,'use_item_frame',land.Public.UseItemFrame)
+            }
+            if (land.Public.LevelExplode) {
+                ImportedApis.UpdateSetting(landId,'ev_explode',land.Public.LevelExplode)
+            }
+            if (land['Sign.Displayname']) {
+                ImportedApis.UpdateSetting(landId,'nickname',land['Sign.Displayname'])
+            }
+            if (land['Sign.Message']) {
+                ImportedApis.UpdateSetting(landId,'describe',land['Sign.Message'])
+            }
+            if (land.TeleportPos) {
+                let mp = new Array(
+                    land.TeleportPos.x,
+                    land.TeleportPos.y,
+                    land.TeleportPos.z
+                )
+                ImportedApis.UpdateSetting(landId,'tpoint',mp)
+            }
+            logger.info('PFLand >> (' + count_now + '/' + count_all + ') landId: ' + landId + " owner: " + owner)
         })
-        INFO('PFLand => Complete, converted '+da.Lands.length+" lands.")
+        logger.info('PFLand >> Complete, converted ' + count_all + " lands.")
+        return
+    }
+
+    // For land-g7.
+    if (args[0]=='landg7' || args[0]=='land-g7') {
+        logger.error('If you\'re using land-g7, please convert data to "pland" by pland at first.')
         return false
     }
 
-    // land-g7
-    if (args[0]=='landg7' || args[0]=='land-g7')
-    {
-        ERROR("If you're using land-g7, please convert data to 'pland' by pland at first.")
-        return false
-    }
-
-    // disable output
-    ERROR("Unknown land data type '"+args[0]+"', please check or contact with author.")
-    return false
+    logger.error('Unknown land data type "' + args[0] + '", please check or contact with author.')
 })
 
-INFO('=> pland loaded.')
-INFO('=> pfland loaded.')
+logger.info('>> pland loaded.')
+logger.info('>> pfland loaded.')
