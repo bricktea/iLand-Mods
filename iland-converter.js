@@ -4,9 +4,9 @@
     
 // --------------------------------------*/
 
-let DATA_PATH = "plugins/land-data/"
+let DATA_PATH = "plugins/iland-converter/"
 if (File.exists("EnableILandDevMode")) {
-    DATA_PATH = 'plugins/LXL_Plugins/iLand/land-data/'
+    DATA_PATH = 'Project/iLand-Mods/iland-converter/'
 }
 
 // Import apis from iLand.

@@ -1,0 +1,40 @@
+{
+    "landdata": {
+        "2D:0:0:0": {
+            "Dim": "2D",
+            "attack": false,
+            "destroyblock": false,
+            "openchest": false,
+            "playerxuid": "114514",
+            "putblock": false,
+            "share_attack": true,
+            "share_destroyblock": true,
+            "share_openchest": true,
+            "share_putblock": true,
+            "share_useitem": true,
+            "shareplayer": [],
+            "sign": {
+                "displayname": ""
+            },
+            "useitem": false,
+            "worldid": 0,
+            "x1": 0,
+            "x2": 0,
+            "y1": 0,
+            "y2": 0,
+            "z1": 0,
+            "z2": 0
+        }
+    },
+    "player": {
+        "2535473100327633": {
+            "playername": "example",
+            "worldland": [
+                "2D:0:0:0"
+            ]
+        }
+    },
+    "po": [
+        "2D:0:0:0"
+    ]
+}
