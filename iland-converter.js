@@ -12,10 +12,10 @@ if (File.exists("EnableILandDevMode")) {
 // Import apis from iLand.
 ImportedApis = {
     Inited: false,
-    GetVersion: lxl.import("ILAPI_GetApiVersion"),
-    CreateLand: lxl.import("ILAPI_CreateLand"),
-    UpdatePermission: lxl.import("ILAPI_UpdatePermission"),
-    UpdateSetting: lxl.import("ILAPI_UpdateSetting")
+    GetVersion: ll.import("ILAPI_GetApiVersion"),
+    CreateLand: ll.import("ILAPI_CreateLand"),
+    UpdatePermission: ll.import("ILAPI_UpdatePermission"),
+    UpdateSetting: ll.import("ILAPI_UpdateSetting")
 }
 
 // Init logger
