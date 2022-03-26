@@ -29,7 +29,7 @@ mc.listen('onServerStarted',function () {
         return
     }
     let ver = ImportedApis.GetVersion()
-    if (ver!=200) {
+    if (ver!=201) {
         logger.error('Unadapted ILAPI version(' + ver + ').')
         return
     }
