@@ -36,7 +36,7 @@ mc.listen('onServerStarted',function () {
     ImportedApis.Inited = true;
 })
 mc.regConsoleCmd('iconv','land converter',function(args) {
-    
+
     // Check ILAPI.
     if (!ImportedApis.Inited) {
         logger.error('ILAPI is not inited.')
@@ -171,9 +171,43 @@ mc.regConsoleCmd('iconv','land converter',function(args) {
     }
 
     // For land-g7.
-    if (args[0]=='landg7' || args[0]=='land-g7') {
+    if (args[0] == 'landg7' || args[0] == 'land-g7') {
         logger.error('If you\'re using land-g7, please convert data to "pland" by pland at first.')
-        return false
+        return
+    }
+
+    // For myland.
+    if (args[0] == 'myland') {
+        let res = JSON.parse(file.readFrom(DATA_PATH+"myland.json"))
+        let count_all = Object.keys(res).length
+        let count_now = 0
+        Object.keys(res).forEach(function(land) {
+            count_now += 1
+            let box = land.split('::')
+            let posA = box[0].split(':')
+            let posB = box[1].split(':')
+            posA = { x:parseInt(posA[0]), y:parseInt(posA[1]), z:parseInt(posA[2]), dimid:parseInt(posA[3]) }
+            posB = { x:parseInt(posB[0]), y:parseInt(posB[1]), z:parseInt(posB[2]), dimid:parseInt(posB[3]) }
+            let owner = res[land].masterXuid
+            let landId = ImportedApis.CreateLand(owner,posA,posB,posA.dimid)
+            if (!landId) {
+                logger.error("RPC packet loss when convert land ['" + land + "'], skipping...")
+                return
+            }
+            if (landId == -1) {
+                logger.error("The API found a problem when checking land ['" + land + "'], skipping...")
+                return
+            }
+            let friends = new Array()
+            for (let name in res[land].friends) {
+                friends.push(res[land].friends[name])
+            }
+            ImportedApis.UpdateSetting(landId,'share',friends)
+            ImportedApis.UpdateSetting(landId,'nickname',res[land].title)
+            logger.info('MyLand >> (' + count_now + '/' + count_all + ') landId: ' + landId + " owner: " + owner)
+        })
+        logger.info('MyLand >> Complete, converted ' + count_all + " lands.")
+        return
     }
 
     logger.error('Unknown land data type "' + args[0] + '", please check or contact with author.')
@@ -181,3 +215,4 @@ mc.regConsoleCmd('iconv','land converter',function(args) {
 
 logger.info('>> pland loaded.')
 logger.info('>> pfland loaded.')
+logger.info('>> myland loaded.')

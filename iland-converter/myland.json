@@ -1,0 +1,49 @@
+{
+    "-938:65:-1953:0::-938:65:-1953:0": {
+        "open": true,
+        "master": "PowderyCarrot67",
+        "masterXuid": "2535434795356802",
+        "title": "家",
+        "friends": {}
+    },
+    "139:64:147:0::-50:57:404:0": {
+        "open": true,
+        "master": "yongbin1999",
+        "masterXuid": "2535452840201868",
+        "title": "流浪汉会所",
+        "friends": {
+            "CoinBuffalo2006": "2535440873996002",
+            "ZYB Games": "2535460818157631",
+            "ScaryWarrior12": "2535440996113887",
+            "DuckierYew96405": "2535442552704472",
+            "yunlianxing": "2535470269813586",
+            "GNXJJ": "2535443041513889",
+            "QMYL7023": "2535425609887540"
+        }
+    },
+    "-19110:76:8020:0::-19110:76:8020:0": {
+        "open": true,
+        "master": "GameDragon11230",
+        "masterXuid": "2535453277226912",
+        "title": "家",
+        "friends": {
+            "chouchouxx11230": "2535435888481104"
+        }
+    },
+    "1207:-38:633:0::1207:-38:633:0": {
+        "open": true,
+        "master": "ScaryWarrior12",
+        "masterXuid": "2535440996113887",
+        "title": "小白",
+        "friends": {
+            "yunlianxing": "2535470269813586"
+        }
+    },
+    "287:282:361:0::375:282:436:0": {
+        "open": false,
+        "master": "yongbin1999",
+        "masterXuid": "2535452840201868",
+        "title": "PVP场地",
+        "friends": {}
+    }
+}

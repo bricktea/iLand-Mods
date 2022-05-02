@@ -15,6 +15,8 @@
 -|-|-|-
 pland | `pland.json` | `iland-converter` | `iconv pland`
 pfland | `pfland.json` | `iland-converter` | `iconv pfland`
+myland | `myland.json` | `iland-converter` | `iconv myland`
+
 ### Edge-Display
 
 为方便查看领地大小，扩建领地开发的边缘查看工具。
