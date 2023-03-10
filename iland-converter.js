@@ -228,6 +228,111 @@ mc.regConsoleCmd('iconv', 'land converter', function (args) {
             })
             logger.info('MyLand >> Complete, converted ' + count_all + " lands.")
             break;
+        case 'landex':
+            res = JSON.parse(file.readFrom(DATA_PATH + "landex.json"))
+            count_all = Object.keys(res).length
+            count_now = 0
+            Object.keys(res).forEach(function (land) {
+                count_now += 1
+                let me = res[land]
+                let posA = {
+                    x: me.range.min_position[0],
+                    y: me.range.min_position[1],
+                    z: me.range.min_position[2]
+                }
+                let posB = {
+                    x: me.range.max_position[0],
+                    y: me.range.max_position[1],
+                    z: me.range.max_position[2]
+                }
+                let owner = me.settings.owner
+
+                if (me.range.type2D) {
+                    let rg = DimGetRange(me.range.dimid)
+                    posA.y = rg[0]
+                    posB.y = rg[1]
+                }
+
+                let landId = ImportedApis.CreateLand(owner, posA, posB, me.range.dimid)
+                if (!landId) {
+                    logger.error("RPC packet loss when convert land ['" + land + "'], skipping...")
+                    return
+                }
+                if (landId == -1) {
+                    logger.error("The API found a problem when checking land ['" + land + "'], skipping...")
+                    return
+                }
+
+                ImportedApis.UpdateSetting(landId, 'share', me.share)
+                ImportedApis.UpdateSetting(landId, 'nickname', me.settings.name)
+                ImportedApis.UpdateSetting(landId, 'describe', me.settings.describe)
+                ImportedApis.UpdateSetting(landId, 'signtome', me.settings.notifytoOwner)
+                ImportedApis.UpdateSetting(landId, 'signtother', me.settings.notifytoPlayer)
+                ImportedApis.UpdateSetting(landId, 'signbuttom', me.settings.notifyItemBar)
+                ImportedApis.UpdateSetting(landId, 'ev_explode', me.events.explode)
+                ImportedApis.UpdateSetting(landId, 'ev_farmland_decay', me.events.farmlandDecay)
+                ImportedApis.UpdateSetting(landId, 'ev_piston_push', me.events.pistonPush)
+                ImportedApis.UpdateSetting(landId, 'ev_fire_spread', me.events.fireSpread)
+                ImportedApis.UpdateSetting(landId, 'ev_redstone_update', me.events.redstoneUpdate)
+
+                let perm = me.permissions
+                ImportedApis.UpdatePermission(landId, 'allow_destroy', perm.blocks.blockDestory)
+                ImportedApis.UpdatePermission(landId, 'allow_place', perm.blocks.blockPlace)
+                ImportedApis.UpdatePermission(landId, 'allow_pickupitem', perm.blocks.itemPickUp)
+                ImportedApis.UpdatePermission(landId, 'allow_dropitem', perm.blocks.itemDrop)
+                ImportedApis.UpdatePermission(landId, 'use_door', perm.blocks.openDoor)
+                ImportedApis.UpdatePermission(landId, 'use_fence_gate', perm.blocks.useFenceGate)
+                ImportedApis.UpdatePermission(landId, 'use_trapdoor', perm.blocks.useTrapdoor)
+                ImportedApis.UpdatePermission(landId, 'allow_entity_destroy', perm.entity.allowEntityDestroy)
+                ImportedApis.UpdatePermission(landId, 'allow_ride_entity', perm.entity.allowRideEntity)
+                ImportedApis.UpdatePermission(landId, 'allow_attack_player', perm.player.allowAttackPlayer)
+                ImportedApis.UpdatePermission(landId, 'allow_attack_animal', perm.player.allowAttackAnimal)
+                ImportedApis.UpdatePermission(landId, 'allow_attack_mobs', perm.player.allowAttackMobs)
+                ImportedApis.UpdatePermission(landId, 'allow_shoot', perm.player.allowShoot)
+                ImportedApis.UpdatePermission(landId, 'use_fishing_hook', perm.player.fishing)
+                ImportedApis.UpdatePermission(landId, 'eat', perm.player.eat)
+                ImportedApis.UpdatePermission(landId, 'allow_throw_potion', perm.player.allowThrowPotion)
+                ImportedApis.UpdatePermission(landId, 'allow_open_chest', perm.container.openChest)
+                ImportedApis.UpdatePermission(landId, 'use_shulker_box', perm.container.openShulkerBox)
+                ImportedApis.UpdatePermission(landId, 'use_item_frame', perm.container.useFrameBlock)
+                ImportedApis.UpdatePermission(landId, 'use_hopper', perm.container.openHopper)
+                ImportedApis.UpdatePermission(landId, 'use_barrel', perm.container.openBarrel)
+                ImportedApis.UpdatePermission(landId, 'use_daylight_detector', perm.redStone.useDaylightDetector)
+                ImportedApis.UpdatePermission(landId, 'use_dispenser', perm.redStone.useDispenser)
+                ImportedApis.UpdatePermission(landId, 'use_dropper', perm.redStone.useDropper)
+                ImportedApis.UpdatePermission(landId, 'use_lever', perm.redStone.useLever)
+                ImportedApis.UpdatePermission(landId, 'use_button', perm.redStone.pressButton)
+                ImportedApis.UpdatePermission(landId, 'use_pressure_plate', perm.redStone.usePressurePlate)
+                ImportedApis.UpdatePermission(landId, 'use_anvil', perm.tools.useAnvil)
+                ImportedApis.UpdatePermission(landId, 'use_beacon', perm.tools.useBeacon)
+                ImportedApis.UpdatePermission(landId, 'use_bed', perm.tools.useBed)
+                ImportedApis.UpdatePermission(landId, 'use_bell', perm.tools.useBell)
+                ImportedApis.UpdatePermission(landId, 'use_blast_furnace', perm.tools.useBlastFurnace)
+                ImportedApis.UpdatePermission(landId, 'use_brewing_stand', perm.tools.useBrewingStand)
+                ImportedApis.UpdatePermission(landId, 'use_campfire', perm.tools.useCampfire)
+                ImportedApis.UpdatePermission(landId, 'use_firegen', perm.tools.useFlint)
+                ImportedApis.UpdatePermission(landId, 'use_cartography_table', perm.tools.useCartographyTable)
+                ImportedApis.UpdatePermission(landId, 'use_composter', perm.tools.useComposter)
+                ImportedApis.UpdatePermission(landId, 'use_crafting_table', perm.tools.useCraftingTable)
+                ImportedApis.UpdatePermission(landId, 'use_enchanting_table', perm.tools.useEnchantingTable)
+                ImportedApis.UpdatePermission(landId, 'use_furnace', perm.tools.useFurnace)
+                ImportedApis.UpdatePermission(landId, 'use_grindstone', perm.tools.useGrindstone)
+                ImportedApis.UpdatePermission(landId, 'use_jukebox', perm.tools.useJukebox)
+                ImportedApis.UpdatePermission(landId, 'use_loom', perm.tools.useLoom)
+                ImportedApis.UpdatePermission(landId, 'use_stonecutter', perm.tools.useStonecutter)
+                ImportedApis.UpdatePermission(landId, 'use_noteblock', perm.tools.useNoteBlock)
+                ImportedApis.UpdatePermission(landId, 'use_smithing_table', perm.tools.useSmithingTable)
+                ImportedApis.UpdatePermission(landId, 'use_smoker', perm.tools.useSmoker)
+                ImportedApis.UpdatePermission(landId, 'use_lectern', perm.tools.useLectern)
+                ImportedApis.UpdatePermission(landId, 'use_cauldron', perm.tools.useCauldron)
+                ImportedApis.UpdatePermission(landId, 'use_respawn_anchor', perm.tools.useRespawnAnchor)
+                ImportedApis.UpdatePermission(landId, 'use_bucket', perm.tools.useBucket)
+                ImportedApis.UpdatePermission(landId, 'use_armor_stand', perm.tools.useArmorStand)
+
+                logger.info('LandEx >> (' + count_now + '/' + count_all + ') landId: ' + landId + " owner: " + owner)
+            })
+            logger.info('LandEx >> Complete, converted ' + count_all + " lands.")
+            break;
         default:
             logger.error('Unknown land data type "' + args[0] + '", please check or contact with author.')
             break;
@@ -238,3 +343,4 @@ mc.regConsoleCmd('iconv', 'land converter', function (args) {
 logger.info('>> pland loaded.')
 logger.info('>> pfland loaded.')
 logger.info('>> myland loaded.')
+logger.info('>> landex loaded.')

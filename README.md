@@ -16,6 +16,9 @@
 pland | `pland.json` | `iland-converter` | `iconv pland`
 pfland | `pfland.json` | `iland-converter` | `iconv pfland`
 myland | `myland.json` | `iland-converter` | `iconv myland`
+landex | `landex.json` | `iland-converter` | `iconv landex`
+
+> **landex** 请将 `priviteLandData.json` 重命名，暂时仅能转换私人领地。
 
 ### Edge-Display
 
